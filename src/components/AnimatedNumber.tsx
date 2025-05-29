@@ -6,7 +6,7 @@ interface IProps {
   value: number | string;
 }
 const AnimatedNumber = ({ value }: IProps) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLSpanElement>(null);
 
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { duration: 3000 });
