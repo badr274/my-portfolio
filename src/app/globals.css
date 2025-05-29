@@ -1,26 +1,140 @@
 @import "tailwindcss";
 
+/* @custom-variant dark (&:is(.dark *)); */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --dark: var(--color-gray-900);
+  --light: #f5f5f5;
+  --primary: #b63e96;
+  --primaryDark: #58e6d9;
+  --circularlight: repeating-radial-gradient(
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 5px,
+    #f5f5f5 100px
+  );
+  --circularSm: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    #f5f5f5 8px,
+    #f5f5f5 40px
+  );
+  --circularMd: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    #f5f5f5 8px,
+    #f5f5f5 60px
+  );
+  --circularLg: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    #f5f5f5 8px,
+    #f5f5f5 80px
+  );
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-dark: var(--dark);
+  --color-light: var(--light);
+  --color-primary: var(--primary);
+  --color-primaryDark: var(--primaryDark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-spin-slow: spin 8s linear infinite;
+}
+.container {
+  @apply px-5;
+}
+/* div {
+  background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px,);
+} */
+.skills {
+  background: var(--circularlight);
+}
+@media (max-width: 1024px) {
+  .skills {
+    background: var(--circularLg) !important;
+  }
+}
+@media (max-width: 768px) {
+  .skills {
+    background: var(--circularMd) !important;
+  }
+  .text-circular {
+    @apply top-0 right-4 absolute;
+  }
+}
+@media (max-width: 640px) {
+  .skills {
+    background: var(--circularSm) !important;
+  }
+  .text-circular {
+    @apply right-3;
+  }
+}
+@media (max-width: 480px) {
+  .skills {
+    @apply !h-[45vh];
+  }
+  .skill {
+    @apply p-0 bg-transparent text-dark;
+  }
+  .text-circular {
+    @apply right-2;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --dark: #f5f5f5;
+    --light: var(--color-gray-900);
+    --circularlight: repeating-radial-gradient(
+      hsla(0, 0%, 100%, 0.5) 2px,
+      var(--color-gray-900) 5px,
+      var(--color-gray-900) 100px
+    );
+    --circularSm: repeating-radial-gradient(
+      hsla(0, 0%, 100%, 0.5) 2px,
+      var(--color-gray-900) 8px,
+      var(--color-gray-900) 40px
+    );
+    --circularMd: repeating-radial-gradient(
+      hsla(0, 0%, 100%, 0.5) 2px,
+      var(--color-gray-900) 8px,
+      var(--color-gray-900) 60px
+    );
+    --circularLg: repeating-radial-gradient(
+      hsla(0, 0%, 100%, 0.5) 2px,
+      var(--color-gray-900) 8px,
+      var(--color-gray-900) 80px
+    );
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+  --dark: #f5f5f5;
+  --light: var(--color-gray-900);
+  --circularlight: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    var(--color-gray-900) 5px,
+    var(--color-gray-900) 100px
+  );
+  --circularSm: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    var(--color-gray-900) 8px,
+    var(--color-gray-900) 40px
+  );
+  --circularMd: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    var(--color-gray-900) 8px,
+    var(--color-gray-900) 60px
+  );
+  --circularLg: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    var(--color-gray-900) 8px,
+    var(--color-gray-900) 80px
+  );
 }
