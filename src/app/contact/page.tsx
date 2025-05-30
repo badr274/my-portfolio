@@ -2,7 +2,7 @@ import ContactForm from "@/components/ContactForm";
 
 const ContactPage = () => {
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 py-20 px-6 flex items-center justify-center">
+    <main className="layout min-h-screen  py-20 px-6 flex items-center justify-center">
       <div className="max-w-3xl w-full bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-4">
           Let&apos;s get in touch

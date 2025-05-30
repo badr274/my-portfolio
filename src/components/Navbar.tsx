@@ -37,7 +37,7 @@ const socials = [
     path: "https://www.facebook.com/share/1CD4PNmWqa/",
   },
   {
-    icon: <GithubIcon className="dark:text-dark" />,
+    icon: <GithubIcon className="dark:text-light github" />,
     path: "https://github.com/badr274",
   },
   {
@@ -61,12 +61,12 @@ const Navbar = () => {
       <Link
         key={path}
         href={path}
-        className="dark:text-dark relative group"
+        className="dark:text-light relative group"
         onClick={() => setIsOpen(false)}
       >
         {label}
         <span
-          className={`h-[1px] inline-block w-0  bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
+          className={`h-[1px] inline-block w-0 bg-dark  dark:bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
             pathname === path ? "w-full" : "w-0"
           }`}
         ></span>
@@ -89,27 +89,27 @@ const Navbar = () => {
     );
   });
   return (
-    <header className="w-full relative px-8 md:px-16 lg:px-32 py-8 font-medium flex items-center justify-between overflow-hidden">
+    <header className="w-full dark:bg-dark  relative px-8 md:px-16 lg:px-32 py-8 font-medium flex items-center justify-between overflow-hidden">
       <button
         type="button"
-        className=" flex-col items-start justify-center flex-1 flex md:hidden"
+        className=" flex-col items-start justify-center flex-1 flex md:hidden cursor-pointer"
         aria-controls="mobile-menu"
         aria-expanded="false"
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <span className="sr-only">Open main menu</span>
         <span
-          className={`bg-dark dark:bg-dark block h-0.5 w-6 rounded-sm transition-all duration-300 ${
+          className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ${
             isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
           } ease-out `}
         ></span>
         <span
-          className={`bg-dark dark:bg-dark block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out  ${
+          className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out  ${
             isOpen ? "opacity-0" : "opacity-100"
           } my-0.5`}
         ></span>
         <span
-          className={`bg-dark dark:bg-dark block h-0.5 w-6 rounded-sm transition-all duration-300 ${
+          className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ${
             isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
           } ease-out `}
         ></span>
@@ -121,7 +121,7 @@ const Navbar = () => {
         {renderSocials}
         <button
           type="button"
-          className="cursor-pointer w-6 h-6 p-1 flex items-center justify-center rounded-full bg-dark text-light"
+          className="cursor-pointer w-6 h-6 p-1 flex items-center justify-center rounded-full bg-dark dark:bg-light text-light dark:text-dark"
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
         >
           {mode === "dark" ? (
@@ -135,7 +135,7 @@ const Navbar = () => {
         <Logo />
       </div>
       <div
-        className={`sm:min-w-[70vw] min-w-[90vw] flex ${
+        className={`menu sm:min-w-[70vw] min-w-[90vw] flex ${
           !isOpen ? "-top-[100%]" : "top-1/2"
         } justify-between items-center flex-col gap-y-8 fixed  transition-all duration-300 left-1/2 -translate-x-1/2 -translate-y-1/2 py-32 bg-dark/90 dark:bg-light/75 rounded-lg z-50 backdrop-blur-md`}
       >
@@ -146,7 +146,7 @@ const Navbar = () => {
           {renderSocials}
           <button
             type="button"
-            className="cursor-pointer w-6 h-6 p-1 flex items-center justify-center rounded-full bg-dark text-light"
+            className="cursor-pointer w-6 h-6 p-1 flex items-center justify-center rounded-full bg-dark dark:bg-light text-light dark:text-dark"
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
           >
             {mode === "dark" ? (

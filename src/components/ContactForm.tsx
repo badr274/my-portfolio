@@ -89,7 +89,7 @@ const ContactForm = () => {
       </div>
       <button
         type="submit"
-        className="w-full flex items-center gap-x-1 justify-center bg-dark cursor-pointer hover:bg-primary-dark transition-colors duration-300 text-light font-semibold py-2 sm:py-3 rounded-xl shadow-md text-sm sm:text-base"
+        className="w-full flex items-center gap-x-1 justify-center bg-dark dark:bg-light cursor-pointer hover:bg-primary-dark transition-colors duration-300 text-light dark:text-dark font-semibold py-2 sm:py-3 rounded-xl shadow-md text-sm sm:text-base"
       >
         {loading ? (
           <>

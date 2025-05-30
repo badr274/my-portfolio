@@ -44,7 +44,7 @@ const Details = ({
             @{company}
           </a>
         </h3>
-        <span className="capitalize font-medium text-sm sm:text-base text-dark/75 dark:text-dark/50">
+        <span className="capitalize font-medium text-sm sm:text-base text-dark/75 dark:text-light/50">
           {time} | {address}
         </span>
         <p className="font-medium w-full text-sm sm:text-base">{work}</p>
@@ -61,7 +61,7 @@ const Experience = () => {
   });
 
   return (
-    <div className="my-32 md:my-64 text-dark">
+    <div className="my-32 md:my-64 text-dark dark:text-light">
       <AnimatedText
         text="Experience"
         className="lg:mb-32 mb-16 w-full text-center"
@@ -72,7 +72,7 @@ const Experience = () => {
           style={{
             scaleY: scrollYProgress,
           }}
-          className="absolute left-[20px]  md:left-[30px] lg:left-9 top-0 w-[2px] md:w-[4px] h-full origin-top bg-dark dark:bg-primaryDark shadow-2xl"
+          className="absolute left-[20px]  md:left-[30px] lg:left-9 top-0 w-[2px] md:w-[4px] h-full origin-top bg-dark  dark:bg-primaryDark shadow-2xl"
         ></motion.div>
         <ul className="w-full flex flex-col items-start justify-between ml-2 md:ml-4">
           <Details

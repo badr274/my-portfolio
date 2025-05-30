@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 };
 const AboutPage = () => {
   return (
-    <main className="flex w-full flex-col items-center py-16 sm:py-24 justify-center">
-      <div className="container mx-auto">
+    <main className=" layout flex w-full flex-col items-center py-16 sm:py-24 justify-center ">
+      <div className="container mx-auto ">
         <AnimatedText text="Passion Fuels Purpose!" />
-        <div className="grid w-full grid-cols-8 gap-8 sm:gap-16 py-15 text-dark">
+        <div className="grid w-full grid-cols-8 gap-8 sm:gap-16 py-15 text-dark dark:text-light">
           <div className="xl:col-span-3 sm:col-span-4 sm:order-1 order-2 col-span-8 flex flex-col items-start justify-start">
-            <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
+            <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
               Biography
             </h2>
             <p className="font-medium">
@@ -39,8 +39,11 @@ const AboutPage = () => {
               every project.
             </p>
           </div>
-          <div className="xl:col-span-3 sm:col-span-4 sm:order-2 order-1 col-span-8 relative xl:h-full h-fit rounded-2xl border-2 border-dark bg-light p-7">
-            <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark"></div>
+          <div
+            className="xl:col-span-3 sm:col-span-4 sm:order-2 order-1 col-span-8 relative xl:h-full h-fit rounded-2xl border-2 border-dark dark:border-light bg-light dark:bg-transparent p-5 sm:p-6 lg:p-7
+          dark:shadow-[8px_8px_0px_0px_#f5f5f5] shadow-[8px_8px_0px_0px_#111827]"
+          >
+            {/* <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" /> */}
             <Image
               src={"/images/profile/my-photo.jpg"}
               alt="Badr Mohamed"
@@ -58,18 +61,18 @@ const AboutPage = () => {
               </h2>
             </div> */}
             <div className="flex flex-col items-center xl:items-end justify-center">
-              <span className="inline-block text-dark text-5xl sm:text-6xl md:text-7xl font-bold">
+              <span className="inline-block text-dark dark:text-light text-5xl sm:text-6xl md:text-7xl font-bold">
                 <AnimatedNumber value={20} />+
               </span>
-              <h2 className="text-lg xl:text-xl font-medium text-center capitalize text-dark/75">
+              <h2 className="text-lg xl:text-xl font-medium text-center capitalize text-dark/75 dark:text-light/75">
                 projects completed
               </h2>
             </div>
             <div className="flex flex-col items-center sm:items-end justify-center">
-              <span className="inline-block text-dark text-5xl sm:text-6xl md:text-7xl font-bold">
+              <span className="inline-block text-dark dark:text-light text-5xl sm:text-6xl md:text-7xl font-bold">
                 <AnimatedNumber value={1} />+
               </span>
-              <h2 className="text-lg sm:text-xl text-center font-medium capitalize text-dark/75">
+              <h2 className="text-lg sm:text-xl text-center font-medium capitalize text-dark/75 dark:text-light/75">
                 years of experience
               </h2>
             </div>

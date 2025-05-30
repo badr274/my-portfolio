@@ -35,7 +35,7 @@ const AnimatedText = ({ className, text }: IProps) => {
   return (
     <div className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden">
       <motion.h1
-        className={`inline-block w-full text-dark font-bold capitalize xl:text-8xl md:text-7xl sm:text-6xl text-4xl ${className}`}
+        className={`inline-block w-full text-dark dark:text-light font-bold capitalize xl:text-8xl md:text-7xl sm:text-6xl text-4xl ${className}`}
         variants={quote}
         initial="initial"
         animate="animate"

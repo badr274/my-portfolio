@@ -10,7 +10,7 @@ interface ISkill {
 const Skill = ({ name, x, y }: ISkill) => {
   return (
     <motion.div
-      className="flex items-center justify-center rounded-full font-semibold text-light text-sm md:text-base sm:text-light bg-dark lg:py-3 lg:px-6 md:py-2 md:px-4 px-3 py-1.5 shadow-dark cursor-pointer absolute skill"
+      className="flex items-center justify-center rounded-full font-semibold text-light dark:text-dark bg-dark dark:bg-light text-sm md:text-base sm:text-light  lg:py-3 lg:px-6 md:py-2 md:px-4 px-3 py-1.5 shadow-dark cursor-pointer absolute skill"
       whileHover={{ scale: 1.05 }}
       initial={{ x: 0, y: 0 }}
       whileInView={{ x, y }}
@@ -25,12 +25,12 @@ const Skill = ({ name, x, y }: ISkill) => {
 const Skills = () => {
   return (
     <div>
-      <h2 className="font-bold xl:text-8xl lg:text-7xl text-6xl mt-32 md:mt-64 w-full text-center text-dark">
+      <h2 className="font-bold xl:text-8xl lg:text-7xl text-6xl mt-32 md:mt-64 w-full text-center text-dark dark:text-light">
         Skills
       </h2>
       <div className="w-full xl:!h-[100vh] relative flex items-center justify-center rounded-full skills h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
         <motion.div
-          className="flex items-center justify-center rounded-full font-semibold  text-sm md:text-base text-light bg-dark p-3 sm:p-4 md:p-5 xl:p-8  shadow-dark cursor-pointer"
+          className="flex items-center justify-center rounded-full font-semibold  text-sm md:text-base text-light dark:text-dark bg-dark dark:bg-light p-3 sm:p-4 md:p-5 xl:p-8  shadow-dark cursor-pointer"
           whileHover={{ scale: 1.05 }}
         >
           Web

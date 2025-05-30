@@ -5,8 +5,9 @@ type Theme = "light" | "dark";
 
 const useTheme = (): [Theme, (mode: Theme) => void] => {
   const preferDarkQuery = "(prefers-color-scheme: dark)";
-  const [mode, setMode] = useState<Theme>("dark");
+  const [mode, setMode] = useState<Theme>("light");
 
+  // تحديد الوضع المبدئي من localStorage أو النظام
   useEffect(() => {
     const mediaQuery = window.matchMedia(preferDarkQuery);
     const userPref = window.localStorage.getItem("my-theme") as Theme | null;
@@ -20,41 +21,30 @@ const useTheme = (): [Theme, (mode: Theme) => void] => {
 
     setMode(initialMode);
 
-    if (initialMode === "dark") {
-      document.documentElement.classList.add("dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-
-    if (!userPref) {
-      const handleSystemChange = (e: MediaQueryListEvent) => {
-        const newMode = e.matches ? "dark" : "light";
+    // تحديث الوضع عند تغيير إعدادات النظام
+    const handleSystemChange = (e: MediaQueryListEvent) => {
+      if (!userPref) {
+        const newMode: Theme = e.matches ? "dark" : "light";
         setMode(newMode);
-        if (newMode === "dark") {
-          document.documentElement.classList.add("dark");
-          document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-          document.documentElement.setAttribute("data-theme", "light");
-        }
-      };
-      mediaQuery.addEventListener("change", handleSystemChange);
-      return () => mediaQuery.removeEventListener("change", handleSystemChange);
-    }
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleSystemChange);
+    return () => mediaQuery.removeEventListener("change", handleSystemChange);
   }, []);
 
+  // تطبيق الوضع على العنصر الرئيسي وتخزينه
   useEffect(() => {
-    if (mode === "dark") {
-      document.documentElement.classList.add("dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-      window.localStorage.setItem("my-theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.setAttribute("data-theme", "light");
-      window.localStorage.setItem("my-theme", "light");
-    }
+    const root = document.documentElement;
+
+    root.classList.toggle("dark", mode === "dark");
+    root.setAttribute("data-theme", mode);
+    window.localStorage.setItem("my-theme", mode);
+
+    // Debug logs
+    console.log("Current mode:", mode);
+    console.log("HTML classList:", root.classList.toString());
+    console.log("data-theme:", root.getAttribute("data-theme"));
   }, [mode]);
 
   return [mode, setMode];

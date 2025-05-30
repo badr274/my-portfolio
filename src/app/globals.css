@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
-/* @custom-variant dark (&:is(.dark *)); */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* @custom-variant dark (&:is(.dark *)); */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --dark: var(--color-gray-900);
+  --dark: #111827;
   --light: #f5f5f5;
   --primary: #b63e96;
   --primaryDark: #58e6d9;
@@ -16,18 +16,18 @@
     #f5f5f5 100px
   );
   --circularSm: repeating-radial-gradient(
-    hsla(0, 0%, 100%, 0.5) 2px,
-    #f5f5f5 8px,
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 4px,
     #f5f5f5 40px
   );
   --circularMd: repeating-radial-gradient(
-    hsla(0, 0%, 100%, 0.5) 2px,
-    #f5f5f5 8px,
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 4px,
     #f5f5f5 60px
   );
   --circularLg: repeating-radial-gradient(
-    hsla(0, 0%, 100%, 0.5) 2px,
-    #f5f5f5 8px,
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 4px,
     #f5f5f5 80px
   );
 }
@@ -46,9 +46,75 @@
 .container {
   @apply px-5;
 }
-/* div {
-  background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px,);
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --circularlight: repeating-radial-gradient(
+      hsla(0, 0%, 100%, 0.5) 2px,
+      #111827 5px,
+      #111827 100px
+    );
+    --circularSm: repeating-radial-gradient(
+      hsla(0, 0%, 100%, 0.5) 2px,
+      #111827 8px,
+      #111827 40px
+    );
+    --circularMd: repeating-radial-gradient(
+      hsla(0, 0%, 100%, 0.5) 2px,
+      #111827 8px,
+      #111827 60px
+    );
+    --circularLg: repeating-radial-gradient(
+      hsla(0, 0%, 100%, 0.5) 2px,
+      #111827 8px,
+      #111827 80px
+    );
+  }
 } */
+
+:root.dark {
+  --circularlight: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    #111827 5px,
+    #111827 100px
+  );
+  --circularSm: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    #111827 8px,
+    #111827 40px
+  );
+  --circularMd: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    #111827 8px,
+    #111827 60px
+  );
+  --circularLg: repeating-radial-gradient(
+    hsla(0, 0%, 100%, 0.5) 2px,
+    #111827 8px,
+    #111827 80px
+  );
+  .layout {
+    @apply bg-dark;
+  }
+  .menu a {
+    @apply text-dark;
+  }
+  .menu span {
+    @apply bg-dark;
+  }
+  .menu .github {
+    @apply text-dark;
+  }
+}
+.menu a {
+  @apply text-light;
+}
+.menu span {
+  @apply bg-light;
+}
+.menu .github {
+  @apply text-light;
+}
 .skills {
   background: var(--circularlight);
 }
@@ -83,58 +149,4 @@
   .text-circular {
     @apply right-2;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --dark: #f5f5f5;
-    --light: var(--color-gray-900);
-    --circularlight: repeating-radial-gradient(
-      hsla(0, 0%, 100%, 0.5) 2px,
-      var(--color-gray-900) 5px,
-      var(--color-gray-900) 100px
-    );
-    --circularSm: repeating-radial-gradient(
-      hsla(0, 0%, 100%, 0.5) 2px,
-      var(--color-gray-900) 8px,
-      var(--color-gray-900) 40px
-    );
-    --circularMd: repeating-radial-gradient(
-      hsla(0, 0%, 100%, 0.5) 2px,
-      var(--color-gray-900) 8px,
-      var(--color-gray-900) 60px
-    );
-    --circularLg: repeating-radial-gradient(
-      hsla(0, 0%, 100%, 0.5) 2px,
-      var(--color-gray-900) 8px,
-      var(--color-gray-900) 80px
-    );
-  }
-}
-
-.dark {
-  --dark: #f5f5f5;
-  --light: var(--color-gray-900);
-  --circularlight: repeating-radial-gradient(
-    hsla(0, 0%, 100%, 0.5) 2px,
-    var(--color-gray-900) 5px,
-    var(--color-gray-900) 100px
-  );
-  --circularSm: repeating-radial-gradient(
-    hsla(0, 0%, 100%, 0.5) 2px,
-    var(--color-gray-900) 8px,
-    var(--color-gray-900) 40px
-  );
-  --circularMd: repeating-radial-gradient(
-    hsla(0, 0%, 100%, 0.5) 2px,
-    var(--color-gray-900) 8px,
-    var(--color-gray-900) 60px
-  );
-  --circularLg: repeating-radial-gradient(
-    hsla(0, 0%, 100%, 0.5) 2px,
-    var(--color-gray-900) 8px,
-    var(--color-gray-900) 80px
-  );
 }

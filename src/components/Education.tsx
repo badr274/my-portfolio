@@ -28,7 +28,7 @@ const Details = ({ type, time, info, place }: IWorkDetails) => {
         <h3 className="capitalize font-bold lg:text-2xl sm:text-xl text-lg">
           {type}
         </h3>
-        <span className="capitalize font-medium text-sm sm:text-base text-dark/75 dark:text-dark/50">
+        <span className="capitalize font-medium text-sm sm:text-base text-dark/75 dark:text-light/50">
           {time} | {place}
         </span>
         <p className="font-medium w-full text-sm sm:text-base">{info}</p>
@@ -45,7 +45,7 @@ const Education = () => {
   });
 
   return (
-    <div className="my-64 text-dark">
+    <div className="my-64 text-dark dark:text-light">
       <AnimatedText
         text="Education"
         className="lg:mb-32 mb-16 w-full text-center"
