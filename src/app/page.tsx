@@ -41,7 +41,7 @@ const HomePage = () => {
           </p>
           <div className="flex items-center gap-4">
             <Link
-              href="/react_resume.pdf"
+              href="/BadrMohamed.pdf"
               target="_blank"
               className="flex items-center bg-dark text-light dark:bg-light dark:text-dark py-1.5 sm:py-2 md:py-2.5 px-4 sm:px-5 md:px-6 rounded-lg text-sm sm:text-base md:text-lg font-semibold  border border-transparent dark:hover:border-light dark:hover:text-light dark:hover:bg-dark hover:border-dark hover:text-dark hover:bg-light duration-300"
               download={true}
